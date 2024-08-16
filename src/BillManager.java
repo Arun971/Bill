@@ -24,15 +24,15 @@ public class BillManager {
                 .collect(Collectors.toList());
     }
 
-//    public Bill getHighestAmountBill() {
-//        return bills.stream()
-//                .max((bill1, bill2) -> Double.compare(bill1.getAmount(), bill2.getAmount()))
-//                .orElse(null);
-//    }
-//
-//    public List<Bill> getSettledBills() {
-//        return new ArrayList<>(settledBills);
-//    } 
+    public Bill getHighestAmountBill() {
+        return bills.stream()
+                .max((bill1, bill2) -> Double.compare(bill1.getAmount(), bill2.getAmount()))
+                .orElse(null);
+    }
+
+    public List<Bill> getSettledBills() {
+        return new ArrayList<>(settledBills);
+    } 
 
     public Map<String, List<Bill>> getBillsGroupedByStore() {
         return bills.stream().collect(Collectors.groupingBy(Bill::getStoreName));
